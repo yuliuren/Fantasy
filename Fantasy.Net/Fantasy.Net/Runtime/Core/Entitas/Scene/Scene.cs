@@ -220,8 +220,8 @@ namespace Fantasy
             
             if (worldId != 0)
             {
-                // 有可能不需要数据库、所以这里默认0的情况下就不创建数据库了scene.World = World.Create(newScene, worldId);
-                
+                // 有可能不需要数据库、所以这里默认0的情况下就不创建数据库了
+                newScene.World = World.Create(newScene, worldId);
             }
             
             Scenes.TryAdd(sceneSchedulerId, newScene);

@@ -179,7 +179,7 @@ namespace Fantasy
 
         public async FTask<T> CreateAsync<T>(UILayer layer = UILayer.None, bool isRunEvent = true) where T : UI, new()
         {
-            var ui = Create<T>(Scene, false);
+            var ui = Create<T>(Scene, true);
 
             try
             {
@@ -219,7 +219,7 @@ namespace Fantasy
 
         public T Create<T>(UILayer layer = UILayer.None, bool isRunEvent = true) where T : UI, new()
         {
-            var ui = Create<T>(Scene, false);
+            var ui = Create<T>(Scene, true);
             
             try
             {
@@ -262,9 +262,14 @@ namespace Fantasy
 
         #region Component
 
+        public T AddComponent<T>() where T : Entity, new()
+        {
+            return base.AddComponent<T>();
+        }
+
         public T AddComponent<T>(UILayer layer = UILayer.None) where T : UI, new()
         {
-            var uiComponent = Create<T>(layer, false);
+            var uiComponent = Create<T>(layer);
             AddComponent(uiComponent);
             Scene.EntityComponent.Awake(uiComponent);
             Scene.EntityComponent.StartUpdate(uiComponent);
@@ -273,7 +278,7 @@ namespace Fantasy
 
         public async FTask<T> AddComponentAsync<T>(UILayer layer = UILayer.None) where T : UI, new()
         {
-            var uiComponent = await CreateAsync<T>(layer, false);
+            var uiComponent = await CreateAsync<T>(layer);
             AddComponent(uiComponent);
             Scene.EntityComponent.Awake(uiComponent);
             Scene.EntityComponent.StartUpdate(uiComponent);
