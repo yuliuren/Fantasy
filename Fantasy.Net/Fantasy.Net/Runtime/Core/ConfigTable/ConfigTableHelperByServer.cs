@@ -16,7 +16,7 @@ namespace Fantasy
 
         /// <summary>
         /// 加载配置表数据
-        /// </summary>
+        /// </summary> 
         /// <typeparam name="T">配置表类型</typeparam>
         /// <returns>配置表数据</returns>
         public T Load<T>() where T : AProto

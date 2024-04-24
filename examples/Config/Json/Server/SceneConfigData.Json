@@ -1,4 +1,9 @@
 {"List":[
 {"Id":1,"EntityId":17247043584,"ServerConfigId":1025,"WorldConfigId":1,"SceneRuntimeType":"MainThread","SceneTypeString":"Authentication","NetworkProtocol":"KCP","OuterPort":20000,"SceneType":1},
-{"Id":2,"EntityId":34494021632,"ServerConfigId":2049,"WorldConfigId":1,"SceneRuntimeType":"MainThread","SceneTypeString":"Gate","NetworkProtocol":"KCP","OuterPort":20001,"SceneType":3}
+{"Id":2,"EntityId":34494021632,"ServerConfigId":2049,"WorldConfigId":1,"SceneRuntimeType":"MainThread","SceneTypeString":"Gate","NetworkProtocol":"KCP","OuterPort":20001,"SceneType":3},
+{"Id":3,"EntityId":51740999680,"ServerConfigId":3073,"WorldConfigId":1,"SceneRuntimeType":"MainThread","SceneTypeString":"Addressable","NetworkProtocol":"None","OuterPort":0,"SceneType":2},
+{"Id":4,"EntityId":68987977728,"ServerConfigId":4097,"WorldConfigId":1,"SceneRuntimeType":"MainThread","SceneTypeString":"Map","NetworkProtocol":"None","OuterPort":0,"SceneType":4},
+{"Id":5,"EntityId":86234955776,"ServerConfigId":5121,"WorldConfigId":1,"SceneRuntimeType":"MainThread","SceneTypeString":"Chat","NetworkProtocol":"None","OuterPort":0,"SceneType":8},
+{"Id":6,"EntityId":103481933824,"ServerConfigId":6145,"WorldConfigId":1,"SceneRuntimeType":"MainThread","SceneTypeString":"Http","NetworkProtocol":"None","OuterPort":0,"SceneType":9},
+{"Id":7,"EntityId":120728911872,"ServerConfigId":7169,"WorldConfigId":1,"SceneRuntimeType":"MainThread","SceneTypeString":"Mgr","NetworkProtocol":"KCP","OuterPort":0,"SceneType":10}
 ]}

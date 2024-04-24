@@ -9,6 +9,26 @@ using System.Threading;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 namespace Fantasy
 {
+    
+    /// <summary>
+    /// 表示当创建新场景时引发的事件数据结构。
+    /// </summary>
+    public struct OnCreateScene
+    {
+        /// <summary>
+        /// 获取与事件关联的场景实体。
+        /// </summary>
+        public readonly Scene Scene;
+
+        /// <summary>
+        /// 初始化一个新的 OnCreateScene 实例。
+        /// </summary>
+        /// <param name="scene">与事件关联的场景实体。</param>
+        public OnCreateScene(Scene scene)
+        {
+            Scene = scene;
+        }
+    }
     public class SceneRuntimeType
     {
         public const string MainThread = "MainThread";
@@ -183,6 +203,7 @@ namespace Fantasy
             {
                 newScene.Scene = newScene;
                 newScene.Parent = newScene;
+                
             }
             else
             {
@@ -199,8 +220,8 @@ namespace Fantasy
             
             if (worldId != 0)
             {
-                // 有可能不需要数据库、所以这里默认0的情况下就不创建数据库了
-                scene.World = World.Create(newScene, worldId);
+                // 有可能不需要数据库、所以这里默认0的情况下就不创建数据库了scene.World = World.Create(newScene, worldId);
+                
             }
             
             Scenes.TryAdd(sceneSchedulerId, newScene);
@@ -216,7 +237,8 @@ namespace Fantasy
 
             if (sceneConfigId != 0)
             {
-                Log.Debug($"ServerConfigId:{server.Id} SceneConfigId:{sceneConfigId} RouteId:{entityId} SceneRuntimeType:{sceneRuntimeType} is start complete");
+                await EventSystem.Instance.PublishAsync(new OnCreateScene(newScene));
+                Log.Debug($"ServerConfigId:{server.Id} SceneConfigId:{sceneConfigId} RouteId:{entityId} SceneRuntimeType:{sceneRuntimeType} is start complete ");
             }
 
             return newScene;

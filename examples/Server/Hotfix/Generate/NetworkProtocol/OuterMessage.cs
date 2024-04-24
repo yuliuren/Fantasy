@@ -19,4 +19,5 @@ namespace Fantasy
 		[ProtoMember(91, IsRequired = true)]
 		public uint ErrorCode { get; set; }
 	}
+
 }
